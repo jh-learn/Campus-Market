@@ -1,0 +1,168 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card:active {
+    transform: translateY(-2px);
+}
+
+/* ---------- 图片区域 ---------- */
+.imageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.imageWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .imageWrap img {
+    transform: scale(1.05);
+}
+
+.sold {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+}
+
+/* ---------- 内容区域 ---------- */
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 14px 14px;
+    flex: 1;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.4;
+    margin: 0;
+    display: -webkit-box;
+    
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #8c8c8c;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.meta span {
+    flex-shrink: 0;
+}
+
+/* ---------- 底部价格与时间 ---------- */
+.footer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 6px;
+}
+
+.price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ff4d4f;
+    letter-spacing: -0.2px;
+}
+
+.time {
+    font-size: 12px;
+    color: #b0b0b0;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ---------- 深色模式（可选） ---------- */
+@media (prefers-color-scheme: dark) {
+    .card {
+        background: #1e1e1e;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .imageWrap {
+        background-color: #2a2a2a;
+    }
+
+    .title {
+        color: #f0f0f0;
+    }
+
+    .meta {
+        color: #999;
+    }
+
+    .time {
+        color: #777;
+    }
+
+    .price {
+        color: #ff6b6b;
+    }
+}
+
+/* ---------- 小屏适配 ---------- */
+@media (max-width: 480px) {
+    .body {
+        padding: 10px 12px 12px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .sold {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+}

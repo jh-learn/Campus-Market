@@ -1,0 +1,9 @@
+.emptyState {
+  padding: 60px 20px;
+  color: #888;
+  text-align: center;
+}
+
+.emptyState h3 {
+  margin: 0 0 8px;
+}

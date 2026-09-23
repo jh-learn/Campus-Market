@@ -1,0 +1,18 @@
+.page {
+  padding: 8px 0 40px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.create {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #fff;
+  background: #2563eb;
+  text-decoration: none;
+}

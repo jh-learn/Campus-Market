@@ -1,0 +1,155 @@
+/* ===== 整体容器 ===== */
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f8fa;
+    color: #1f2329;
+}
+
+/* ===== 顶部导航栏 ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    height: 60px;
+    padding: 0 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaecef;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Logo */
+.logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.logo:hover {
+    color: #1d4ed8;
+}
+
+/* 导航链接 */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 1;
+}
+
+.nav a {
+    font-size: 14px;
+    color: #4b5563;
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+}
+
+.nav a:hover {
+    color: #2563eb;
+}
+
+/* React Router 的 NavLink 激活态（若以后换成 NavLink） */
+.nav a.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+}
+
+/* ===== 用户信息区 ===== */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.user img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.user span {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== 主内容区 ===== */
+.main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+    .header {
+        gap: 16px;
+        padding: 0 16px;
+        height: 56px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav {
+        gap: 16px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+    .user span {
+        display: none;
+        /* 小屏只留头像 */
+    }
+
+    .main {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 12px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+}
+
+.user button {
+    padding: 4px 8px;
+    border: 1px solid #d0d5dd;
+    border-radius: 6px;
+    background: #fff;
+    color: #475467;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+}
+
+.user button:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}

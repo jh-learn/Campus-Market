@@ -1,0 +1,169 @@
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+}
+
+/* ---------- Hero 区域 ---------- */
+.hero {
+    text-align: center;
+    padding: 40px 20px 32px;
+}
+
+.hero h1 {
+    margin: 0 0 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+}
+
+.search {
+    width: 100%;
+    max-width: 520px;
+    height: 48px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: #1a1a1a;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 24px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search::placeholder {
+    color: #b0b0b0;
+}
+
+.search:focus {
+    border-color: #ff4d4f;
+    box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.12);
+}
+
+/* ---------- 分类筛选 ---------- */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.filters button {
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    background: #f5f5f5;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.filters button:hover {
+    background: #ebebeb;
+    color: #1a1a1a;
+}
+
+.filters button.active {
+    background: #ff4d4f;
+    color: #fff;
+    border-color: #ff4d4f;
+}
+
+.filters button.active:hover {
+    background: #e64547;
+}
+
+/* ---------- 结果区域 ---------- */
+.results {
+    min-height: 240px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* ---------- 深色模式（可选） ---------- */
+@media (prefers-color-scheme: dark) {
+    .hero h1 {
+        color: #f0f0f0;
+    }
+
+    .search {
+        background: #1e1e1e;
+        border-color: #333;
+        color: #f0f0f0;
+    }
+
+    .search::placeholder {
+        color: #777;
+    }
+
+    .filters button {
+        background: #2a2a2a;
+        color: #bbb;
+    }
+
+    .filters button:hover {
+        background: #333;
+        color: #f0f0f0;
+    }
+}
+
+/* ---------- 响应式适配 ---------- */
+@media (max-width: 768px) {
+    .page {
+        padding: 16px 14px 32px;
+    }
+
+    .hero {
+        padding: 28px 8px 24px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .search {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .filters {
+        gap: 8px;
+        margin-bottom: 24px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filters button {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
